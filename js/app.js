@@ -1,7 +1,7 @@
 "use strict";
 
 var Board = {
-	cell1: '',
+	cell1: '1',
 	cell2: '',
 	cell3: '',
 	cell4: '',
@@ -12,9 +12,32 @@ var Board = {
 	cell9: ''
 }
 
+var Counter = 0;
+
 var Method = {
-	// Assign cell# a value if x or o based on click
-}
+	determineIfTaken: function(value)	{
+		var square = eval("Board.cell" + value);
+		console.log(square);
+		if (square !== '') {
+			alert("Square Taken");
+		}
+	},
+
+	determineXO: function() {
+		Counter += 1;
+		if (Counter % 2 == 0) {
+			return 'x';
+		} else {
+			return 'o';
+		}
+	},
+
+	assignCellVal: function(squareClicked, xOrO) {
+		var 
+		Board.cell(squareClicked) = xOrO;
+		console.log(Board.cell(squareClicked));
+	}
+};
 
 var View = {
 	renderBoard: function() {
@@ -33,11 +56,17 @@ var View = {
 	},
 	clearBoard: function() {
 		// loop through Board and clear all cells(1-9)
+		Counter = 0;
 		View.renderBoard();
 	}
 }
 $(function()	{
+	// Board listener
 	$('.board').on('click', 'div', function() {
-		console.log(event.target);
+		var squareClicked = event.target.id;
+		// Method.determineIfTaken(squareClicked);
+		var xOrO = Method.determineXO();
+		console.log(squareClicked, xOrO);
+		Method.assignCellVal(squareClicked, xOrO)
 	});
 })
