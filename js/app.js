@@ -1,22 +1,12 @@
 "use strict";
 
-var Board = {
-	cell1: '1',
-	cell2: '',
-	cell3: '',
-	cell4: '',
-	cell5: '',
-	cell6: '',
-	cell7: '',
-	cell8: '',
-	cell9: ''
-}
+var Board = []
 
 var Counter = 0;
 
 var Method = {
 	determineIfTaken: function(value)	{
-		var square = eval("Board.cell" + value);
+		var square = Board[value];
 		console.log(square);
 		if (square !== '') {
 			alert("Square Taken");
@@ -32,10 +22,9 @@ var Method = {
 		}
 	},
 
-	assignCellVal: function(squareClicked, xOrO) {
-		var 
-		Board.cell(squareClicked) = xOrO;
-		console.log(Board.cell(squareClicked));
+	assignCellVal: function(value, xOrO) {
+		Board[value] = xOrO;
+		console.log(Board[value]);
 	}
 };
 
@@ -43,15 +32,15 @@ var View = {
 	renderBoard: function() {
 	$('.board').empty();
 	$('.board').html(
-		"<div id='1' class="+Board.cell1+"></div>"+
-		"<div id='2' class="+Board.cell2+"></div>"+
-		"<div id='3' class="+Board.cell3+"></div>"+
-		"<div id='4' class="+Board.cell4+"></div>"+
-		"<div id='5' class="+Board.cell5+"></div>"+
-		"<div id='6' class="+Board.cell5+"></div>"+
-		"<div id='7' class="+Board.cell5+"></div>"+
-		"<div id='8' class="+Board.cell5+"></div>"+
-		"<div id='9' class="+Board.cell5+"></div>"
+		"<div id='0' class="+Board[0]+"></div>"+
+		"<div id='1' class="+Board[1]+"></div>"+
+		"<div id='2' class="+Board[2]+"></div>"+
+		"<div id='3' class="+Board[3]+"></div>"+
+		"<div id='4' class="+Board[4]+"></div>"+
+		"<div id='5' class="+Board[5]+"></div>"+
+		"<div id='6' class="+Board[6]+"></div>"+
+		"<div id='7' class="+Board[7]+"></div>"+
+		"<div id='8' class="+Board[8]+"></div>"
 		);
 	},
 	clearBoard: function() {
@@ -67,6 +56,7 @@ $(function()	{
 		// Method.determineIfTaken(squareClicked);
 		var xOrO = Method.determineXO();
 		console.log(squareClicked, xOrO);
-		Method.assignCellVal(squareClicked, xOrO)
+		Method.assignCellVal(squareClicked, xOrO);
+		View.renderBoard();
 	});
 })
