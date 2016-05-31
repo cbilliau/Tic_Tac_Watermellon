@@ -1,0 +1,38 @@
+
+body {
+	background: #F7ED80;
+}
+
+	.rind	{
+	border-radius: 15px;
+	margin: 5em auto;
+	background: #A4D138;
+	width: 30em;
+	height: 30em;
+	padding: 1em;
+	}
+
+	.board {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width:  30em;
+		height: 30em;
+		background: #FF7877;
+	}
+
+	.xMark	{
+		background: url("../images/xIcon.png");
+	}
+
+	.oMark	{
+		background: url("../images/oIcon.png");
+	}
+
+	.board div {
+		width:  9.5em;
+		height: 9.5em;
+		background-position: center;
+		background-repeat: no-repeat;
+		border: 4px solid #C8FF54;
+	}
