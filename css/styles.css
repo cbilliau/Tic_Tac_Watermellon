@@ -3,9 +3,27 @@ body {
 	background: #F7ED80;
 }
 
-	.rind	{
+.name	{
+	margin: 1em auto;
+	width: 30em;
+	height: 5em;
+
+	border: solid .5em sandybrown;
+	border-radius: 5px;
+	background-color: slategrey;
+	vertical-align: middle;
+}
+
+h1   {
+	padding: .5em auto;
+	font-family: Cherry Cream Soda;
+	font-size: 2.25em;
+	text-align: center;
+	color: pink;
+}
+ .rind	{
 	border-radius: 15px;
-	margin: 5em auto;
+	margin: 1em auto;
 	background: #A4D138;
 	width: 30em;
 	height: 30em;
