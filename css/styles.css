@@ -6,21 +6,31 @@ body {
 	.gameName	{
 		margin: 1em auto;
 		width: 30em;
-		height: 5em;
+		height: 7em;
 
 		border: solid .5em sandybrown;
 		border-radius: 5px;
 		background-color: slategrey;
-		vertical-align: middle;
+		text-align: center;
 	}
 
 	h1   {
-		padding: .5em auto;
+		margin: .2em 0;
+		padding: 1em auto;
 		font-family: Cherry Cream Soda;
 		font-size: 2.25em;
 		text-align: center;
 		color: pink;
 	}
+
+	button {
+		margin: 0 auto;
+		font-family: Cherry Cream Soda;
+		font-size: 1em;
+		position: relative;
+		color: hotpink;
+	}
+
  .rind	{
 	border-radius: 15px;
 	margin: 1em auto;
