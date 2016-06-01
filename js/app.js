@@ -5,6 +5,7 @@ var Board = []
 var Counter = 0;
 
 var Method = {
+	
 	determineIfTaken: function(value)	{
 		var square = Board[value];
 		if (square !== undefined) {
@@ -15,7 +16,6 @@ var Method = {
 
 	determineXO: function() {
 		Counter += 1;
-		console.log(Counter);
 		if (Counter % 2 == 0) {
 			return 'o';
 		} else {
@@ -33,7 +33,6 @@ var Method = {
 			Board[i] = '';
 		}
 	}
-
 };
 
 var View = {
@@ -51,12 +50,14 @@ var View = {
 		"<div id='8' class="+Board[8]+"></div>"
 		);
 	},
+
 	clearBoard: function() {
 		Method.clearCellValue();
 		Counter = 0;
 		View.renderBoard();
 	}
 }
+
 $(function()	{
 	// Board listener
 	$('.board').on('click', 'div', function() {
@@ -66,6 +67,7 @@ $(function()	{
 		Method.assignCellVal(squareClicked, xOrO);
 		View.renderBoard();
 	});
+	// Reset board
 	$('button').on('click', function() {
 		View.clearBoard();
 	});
