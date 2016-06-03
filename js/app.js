@@ -1,16 +1,18 @@
 "use strict";
 
-var Board = []
+var Board = [];
 
 var Counter = 0;
 
 var Method = {
-	
+
 	determineIfTaken: function(value)	{
 		var square = Board[value];
 		if (square !== undefined) {
 			alert('Choose another square');
 			return false;
+		} else {
+			return true;
 		}
 	},
 
@@ -62,11 +64,14 @@ $(function()	{
 	// Board listener
 	$('.board').on('click', 'div', function() {
 		var squareClicked = event.target.id;
-		// Method.determineIfTaken(squareClicked);
-		var xOrO = Method.determineXO();
-		Method.assignCellVal(squareClicked, xOrO);
-		View.renderBoard();
+		var openSquare = Method.determineIfTaken(squareClicked);
+		if ( openSquare == true ) {
+			var xOrO = Method.determineXO();
+			Method.assignCellVal(squareClicked, xOrO);
+			View.renderBoard();
+		}
 	});
+	
 	// Reset board
 	$('button').on('click', function() {
 		View.clearBoard();
