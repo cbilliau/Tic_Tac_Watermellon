@@ -32,7 +32,7 @@ var Method = {
 	clearCellValue: function() {
 		var i;
 		for (i = 0; i <= 9; i++ ) {
-			Board[i] = '';
+			Board[i] = undefined;
 		}
 	}
 };
@@ -71,7 +71,7 @@ $(function()	{
 			View.renderBoard();
 		}
 	});
-	
+
 	// Reset board
 	$('button').on('click', function() {
 		View.clearBoard();
